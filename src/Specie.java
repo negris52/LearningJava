@@ -10,7 +10,9 @@ public class Specie implements Cloneable {
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        Animal cloned = (Animal) super.clone();
+        cloned.setSpecie((Specie)cloned.getSpecie().clone());
+        return cloned;
     }
 
     @Override
